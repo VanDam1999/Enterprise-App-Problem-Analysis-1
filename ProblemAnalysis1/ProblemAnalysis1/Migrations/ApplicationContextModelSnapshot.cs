@@ -30,7 +30,7 @@ namespace ProblemAnalysis1.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("GPA")
+                    b.Property<float>("GPA")
                         .HasColumnType("REAL");
 
                     b.Property<string>("LastName")
@@ -48,38 +48,20 @@ namespace ProblemAnalysis1.Migrations
                         new
                         {
                             Id = 1,
-                            DateofBirth = "1992-02-01",
-                            FirstName = "Frank",
-                            GPA = 3.2000000000000002,
-                            LastName = "Jacob",
+                            DateofBirth = "1971-05-31",
+                            FirstName = "Bart",
+                            GPA = 2.7f,
+                            LastName = "Simpson",
                             StudentSchoolNumber = 87654321
                         },
                         new
                         {
                             Id = 2,
-                            DateofBirth = "1997-04-03",
-                            FirstName = "Billy",
-                            GPA = 2.2000000000000002,
-                            LastName = "Joe",
+                            DateofBirth = "1973-08-05",
+                            FirstName = "Lisa",
+                            GPA = 2.2f,
+                            LastName = "Simpson",
                             StudentSchoolNumber = 87654322
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DateofBirth = "1991-08-02",
-                            FirstName = "Timmy",
-                            GPA = 1.3,
-                            LastName = "Short",
-                            StudentSchoolNumber = 87654323
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DateofBirth = "2000-04-06",
-                            FirstName = "Rachel",
-                            GPA = 3.2000000000000002,
-                            LastName = "Blake",
-                            StudentSchoolNumber = 87654324
                         });
                 });
 #pragma warning restore 612, 618

@@ -23,38 +23,20 @@ namespace ProblemAnalysis1.Models
             modelBuilder.Entity<Student>().HasData(new Student
             {
                 Id = 1,
-                FirstName = "Frank",
-                LastName = "Jacob",
-                DateofBirth = "1992-02-01",
-                GPA = 3.2,
+                FirstName = "Bart",
+                LastName = "Simpson",
+                DateofBirth = "1971-05-31",
+                GPA = 2.7m,
                 StudentSchoolNumber = 87654321
             });
             modelBuilder.Entity<Student>().HasData(new Student
             {
                 Id = 2,
-                FirstName = "Billy",
-                LastName = "Joe",
-                DateofBirth = "1997-04-03",
-                GPA = 2.2,
+                FirstName = "Lisa",
+                LastName = "Simpson",
+                DateofBirth = "1973-08-05",
+                GPA = 2.2m,
                 StudentSchoolNumber = 87654322
-            });
-            modelBuilder.Entity<Student>().HasData(new Student
-            {
-                Id = 3,
-                FirstName = "Timmy",
-                LastName = "Short",
-                DateofBirth = "1991-08-02",
-                GPA = 1.3,
-                StudentSchoolNumber = 87654323
-            });
-            modelBuilder.Entity<Student>().HasData(new Student
-            {
-                Id = 4,
-                FirstName = "Rachel",
-                LastName = "Blake",
-                DateofBirth = "2000-04-06",
-                GPA = 3.2,
-                StudentSchoolNumber = 87654324
             });
         }
     }

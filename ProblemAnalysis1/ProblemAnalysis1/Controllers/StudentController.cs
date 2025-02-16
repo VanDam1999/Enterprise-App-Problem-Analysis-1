@@ -24,24 +24,6 @@ namespace ProblemAnalysis1.Controllers
             return View(await _context.Student.ToListAsync());
         }
 
-        // GET: Student/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (student == null)
-            {
-                return NotFound();
-            }
-
-            return View(student);
-        }
-
         // GET: Student/Create
         public IActionResult Create()
         {

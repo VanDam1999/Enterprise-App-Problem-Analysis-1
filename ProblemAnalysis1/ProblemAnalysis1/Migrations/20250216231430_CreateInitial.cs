@@ -21,7 +21,7 @@ namespace ProblemAnalysis1.Migrations
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     DateofBirth = table.Column<string>(type: "TEXT", nullable: false),
-                    GPA = table.Column<double>(type: "REAL", nullable: false),
+                    GPA = table.Column<float>(type: "REAL", nullable: false),
                     StudentSchoolNumber = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -34,10 +34,8 @@ namespace ProblemAnalysis1.Migrations
                 columns: new[] { "Id", "DateofBirth", "FirstName", "GPA", "LastName", "StudentSchoolNumber" },
                 values: new object[,]
                 {
-                    { 1, "1992-02-01", "Frank", 3.2000000000000002, "Jacob", 87654321 },
-                    { 2, "1997-04-03", "Billy", 2.2000000000000002, "Joe", 87654322 },
-                    { 3, "1991-08-02", "Timmy", 1.3, "Short", 87654323 },
-                    { 4, "2000-04-06", "Rachel", 3.2000000000000002, "Blake", 87654324 }
+                    { 1, "1971-05-31", "Bart", 2.7f, "Simpson", 87654321 },
+                    { 2, "1973-08-05", "Lisa", 2.2f, "Simpson", 87654322 }
                 });
         }
 
