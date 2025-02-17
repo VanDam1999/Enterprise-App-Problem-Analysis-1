@@ -21,12 +21,13 @@ namespace ProblemAnalysis1.Controllers
         // GET: Student
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Student.ToListAsync());
+            return View(await _context.Student.Include(m => m.Program).ToListAsync());
         }
 
         // GET: Student/Create
         public IActionResult Create()
         {
+            ViewBag.Program = _context.Program.OrderBy(g => g.Name).ToList();
             return View();
         }
 
@@ -39,6 +40,7 @@ namespace ProblemAnalysis1.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.Program = _context.Program.OrderBy(g => g.Name).ToList();
                 return View(student);
             }
 
@@ -63,6 +65,8 @@ namespace ProblemAnalysis1.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Program = _context.Program.OrderBy(g => g.Name).ToList();
             return View(student);
         }
 
@@ -80,6 +84,7 @@ namespace ProblemAnalysis1.Controllers
 
             if (!ModelState.IsValid)
             {
+                ViewBag.Program = _context.Program.OrderBy(g => g.Name).ToList();
                 return View(student);
             }
 

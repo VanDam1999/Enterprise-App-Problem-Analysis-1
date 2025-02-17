@@ -20,19 +20,23 @@ namespace ProblemAnalysis1.Models
         [DisplayName("Date of birth")]
         [Required(ErrorMessage = "Please enter the students date of birth")]
         public string DateofBirth { get; set; } = string.Empty;
-        [Range(0.0, 4.0)]
-        [Required(ErrorMessage = "Please enter the students GPA which must be between 0.0 - 4.0")]
+        [Range(0.0, 4.0, ErrorMessage = "Please enter the students GPA which must be between 0.0 - 4.0")]
         public decimal GPA { get; set; }
-        [Range(10000000, 99999999)]
-        [Required(ErrorMessage = "Please enter the students school number which must be eight digits")]
+        [DisplayName("Student number")]
+        [Range(10000000, 99999999, ErrorMessage = "Please enter the students school number which must be eight digits")]
         public int StudentSchoolNumber { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "Please choose a program of study")]
+        public int ProgramId { get; set; }
+        
+        [ValidateNever]
+        public Program Program { get; set; } = null!;
 
         public int StudentAge(string dob)
         {
             DateTime result;
             if (DateTime.TryParse(dob, out result))
             {
-                return DateTime.Now.AddYears(-result.Year).Year;
+                return DateTime.Now.Year - result.Year;
             }
             return 0;
         }

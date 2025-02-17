@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ProblemAnalysis1.Models.Student>
 
 @{
-    ViewData["Title"] = "Students";
+    ViewData["Title"] = "All Students";
 }
 
-<h1>Students</h1>
+<h1>All students</h1>
 
 <p>
     <a asp-action="Create">Add new student</a>
@@ -26,6 +26,9 @@
             </th>
             <th>
                 GPA Scale
+            </th>
+            <th>
+                Program
             </th>
             <th>
                 Action
@@ -50,6 +53,9 @@
                 </td>
                 <td>
                     @item.GPAScale(item.GPA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Program.Name)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
